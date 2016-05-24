@@ -81,6 +81,7 @@
     if (self == nil) return nil;
     
     [self setDelegate:delegate];
+    [self setCellScale:1.5f];
     
     return self;
 }
@@ -135,9 +136,27 @@
             return;
         }
         
+        BOOL shouldDragging = YES;
+        
+        if ([self.delegate respondsToSelector:@selector(cellMover:shouldBeginDraggingAtIndexPath:)]) {
+            shouldDragging = [self.delegate cellMover:self shouldBeginDraggingAtIndexPath:_startIndexPath];
+        }
+        
+        // When should not dragging, cancel dragging.
+        if (!shouldDragging) {
+            
+            [self cleanUP];
+            return;
+        }
+        
+        // Notify delegate will begin dragging.
+        if ([self.delegate respondsToSelector:@selector(cellMoverWillBeginDragging:)]) {
+            [self.delegate cellMoverWillBeginDragging:self];
+        }
+        
         [cell setHidden:YES];
         
-        CGAffineTransform transform = CGAffineTransformMakeScale(1.5f, 1.5f);
+        CGAffineTransform transform = CGAffineTransformMakeScale(self.cellScale, self.cellScale);
         
         _draggingView = cell.snapshotView;
         [_draggingView setCenter:point];
@@ -158,8 +177,14 @@
         NSUInteger startIndex = _startIndexPath.item;
         NSUInteger toIndex = _previousIndexPath.item;
         
-        if ([self.delegate respondsToSelector:@selector(cellMover:willExchangeItemFromIndex:toIndex:)]) {
-            [self.delegate cellMover:self willExchangeItemFromIndex:startIndex toIndex:toIndex];
+        // Notify delegate did end dragging.
+        if ([self.delegate respondsToSelector:@selector(cellMoverDidEndDragging:)]) {
+            [self.delegate cellMoverDidEndDragging:self];
+        }
+        
+        // Notify delegate item will move to new index.
+        if ([self.delegate respondsToSelector:@selector(cellMover:willMoveItemFromIndex:toIndex:)]) {
+            [self.delegate cellMover:self willMoveItemFromIndex:startIndex toIndex:toIndex];
         }
         
         // Clean up
@@ -196,7 +221,6 @@
     }
     
     [_draggingView setCenter:point];
-//    [sender setTranslation:CGPointZero inView:_collectionView];
 }
 
 #pragma mark - Private Methods

@@ -13,13 +13,56 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol DTCollectionViewCellMoverDelegate;
 @interface DTCollectionViewCellMover : NSObject
 
+/**
+ *    The scale for cell when dragging. Default is 1.5.
+ */
+@property (assign) CGFloat cellScale;
+
+@property (readonly, nonnull) UICollectionView *collectionView;
+
 + (instancetype)cellMoverWithDelegate:(id<DTCollectionViewCellMoverDelegate>)delegate;
 
 @end
 
 @protocol DTCollectionViewCellMoverDelegate <NSObject>
 
-- (void)cellMover:(DTCollectionViewCellMover *)cellMover willExchangeItemFromIndex:(NSInteger)index toIndex:(NSInteger)toIndex;
+@optional
+
+/**
+ *    Notify delegate will begin dragging.
+ *
+ *    @param cellMover Instance of DTCollectionViewCellMover.
+ */
+- (void)cellMoverWillBeginDragging:(DTCollectionViewCellMover *)cellMover;
+
+/**
+ *    Notify delegate did end dragging.
+ *
+ *    @param cellMover Instance of DTCollectionViewCellMover.
+ */
+- (void)cellMoverDidEndDragging:(DTCollectionViewCellMover *)cellMover;
+
+/**
+ *    Check this cell of index path should be dragging.
+ *
+ *    @param cellMover Instance of DTCollectionViewCellMover.
+ *    @param indexPath IndexPath of will dragging cell.
+ *
+ *    @return YES is cell should be dragging, otherwise NO.
+ */
+- (BOOL)cellMover:(DTCollectionViewCellMover *)cellMover shouldBeginDraggingAtIndexPath:(NSIndexPath *)indexPath;
+
+@required
+
+/**
+ *    Notfy delegate what index did item move to.
+ *
+ *    @param cellMover Instance of DTCollectionViewCellMover.
+ *    @param index     Item's current index.
+ *    @param toIndex   Index of item will move to.
+ */
+- (void)cellMover:(DTCollectionViewCellMover *)cellMover willMoveItemFromIndex:(NSInteger)index toIndex:(NSInteger)toIndex;
+
 
 @end
 NS_ASSUME_NONNULL_END
