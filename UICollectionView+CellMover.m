@@ -5,10 +5,10 @@
 //  Copyright © 2016年 Darktt. All rights reserved.
 //
 
-@import ObjectiveC.runtime;
-
 #import "UICollectionView+CellMover.h"
 #import "DTCollectionViewCellMover.h"
+
+@import ObjectiveC.runtime;
 
 static void DT_SwizzleMethod(Class class, SEL originalSelector, SEL swizzledSelector)
 {
