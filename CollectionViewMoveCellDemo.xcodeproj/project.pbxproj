@@ -109,6 +109,7 @@
 				526F38771CF2D66A00E5D57D /* UICollectionView+CellMover.m */,
 			);
 			name = DTCollectionViewCellMover;
+			path = ../DTCollectionViewCellMover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +354,7 @@
 				526F386E1CF2D28600E5D57D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
