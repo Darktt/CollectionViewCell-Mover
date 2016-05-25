@@ -112,7 +112,6 @@ static NSString *const kCellMoverKey = @"Cell Mover";
 
 - (void)setCellMover:(DTCollectionViewCellMover *)cellMover
 {
-    
     if (cellMover != nil) {
         [cellMover setCollectionView:self];
     }
