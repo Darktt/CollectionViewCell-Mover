@@ -73,6 +73,8 @@ static NSString *const kCellMoverKey = @"Cell Mover";
 {
     [self DT_layoutSubviews];
     
+    if (self.cellMover == nil) return;
+    
     CGFloat heightOfEdge = CGRectGetHeight(self.bounds) - 100.0f;
     UIEdgeInsets topEdgeInsets = UIEdgeInsetsMake(0.0f, 0.0f, heightOfEdge, 0.0f);
     UIEdgeInsets bottomEdgeInsets = UIEdgeInsetsMake(heightOfEdge, 0.0f, 0.0f, 0.0f);
