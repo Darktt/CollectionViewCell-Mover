@@ -111,22 +111,9 @@
 
 #pragma mark - DTCollectionViewCellMoverDelegate
 
-- (void)cellMover:(DTCollectionViewCellMover *)cellMover willExchangeItemFromIndex:(NSInteger)index toIndex:(NSInteger)toIndex
+- (void)cellMover:(DTCollectionViewCellMover *)cellMover willMoveItemFromIndex:(NSInteger)index toIndex:(NSInteger)toIndex;
 {
     [_cellColors moveObjectAtIndex:index toIndex:toIndex];
-}
-
-@end
-
-@interface NSDictionary (dic)
-
-@end
-
-@implementation NSDictionary (dic)
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 @end
