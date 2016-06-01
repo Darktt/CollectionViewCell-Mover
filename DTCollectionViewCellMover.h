@@ -36,7 +36,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)cellMoverWillBeginDragging:(DTCollectionViewCellMover *)cellMover;
 
 /**
- *    Notify delegate did end dragging.
+ *    Notify delegate will end dragging, before update item.
+ *
+ *    @param cellMover Instance of DTCollectionViewCellMover.
+ */
+- (void)cellMoverWillEndDragging:(DTCollectionViewCellMover *)cellMover;
+
+/**
+ *    Notify delegate did end dragging, after update item.
  *
  *    @param cellMover Instance of DTCollectionViewCellMover.
  */
@@ -62,7 +69,6 @@ NS_ASSUME_NONNULL_BEGIN
  *    @param toIndex   Index of item will move to.
  */
 - (void)cellMover:(DTCollectionViewCellMover *)cellMover willMoveItemFromIndex:(NSInteger)index toIndex:(NSInteger)toIndex;
-
 
 @end
 NS_ASSUME_NONNULL_END
