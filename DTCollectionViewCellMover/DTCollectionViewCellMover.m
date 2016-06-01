@@ -177,14 +177,19 @@
         NSUInteger startIndex = _startIndexPath.item;
         NSUInteger toIndex = _previousIndexPath.item;
         
-        // Notify delegate did end dragging.
-        if ([self.delegate respondsToSelector:@selector(cellMoverDidEndDragging:)]) {
-            [self.delegate cellMoverDidEndDragging:self];
+        // Notify delegate will end dragging.
+        if ([self.delegate respondsToSelector:@selector(cellMoverWillEndDragging:)]) {
+            [self.delegate cellMoverWillEndDragging:self];
         }
         
         // Notify delegate item will move to new index.
         if ([self.delegate respondsToSelector:@selector(cellMover:willMoveItemFromIndex:toIndex:)]) {
             [self.delegate cellMover:self willMoveItemFromIndex:startIndex toIndex:toIndex];
+        }
+        
+        // Notify delegate did end dragging.
+        if ([self.delegate respondsToSelector:@selector(cellMoverDidEndDragging:)]) {
+            [self.delegate cellMoverDidEndDragging:self];
         }
         
         // Clean up
