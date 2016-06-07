@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (readonly, nonnull) UICollectionView *collectionView;
 
 + (instancetype)cellMoverWithDelegate:(id<DTCollectionViewCellMoverDelegate>)delegate;
+- (instancetype)initWithDelegate:(id<DTCollectionViewCellMoverDelegate>)delegate;
 
 @end
 
@@ -33,21 +34,21 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *    @param cellMover Instance of DTCollectionViewCellMover.
  */
-- (void)cellMoverWillBeginDragging:(DTCollectionViewCellMover *)cellMover;
+- (void)cellMoverWillBeginDragging:(DTCollectionViewCellMover *)cellMover NS_SWIFT_NAME(cellMover(willBeginDragging:));
 
 /**
  *    Notify delegate will end dragging, before update item.
  *
  *    @param cellMover Instance of DTCollectionViewCellMover.
  */
-- (void)cellMoverWillEndDragging:(DTCollectionViewCellMover *)cellMover;
+- (void)cellMoverWillEndDragging:(DTCollectionViewCellMover *)cellMover NS_SWIFT_NAME(cellMover(willEndDragging:));
 
 /**
  *    Notify delegate did end dragging, after update item.
  *
  *    @param cellMover Instance of DTCollectionViewCellMover.
  */
-- (void)cellMoverDidEndDragging:(DTCollectionViewCellMover *)cellMover;
+- (void)cellMoverDidEndDragging:(DTCollectionViewCellMover *)cellMover NS_SWIFT_NAME(cellMover(didEndDragging:));
 
 /**
  *    Check this cell of index path should be dragging.
