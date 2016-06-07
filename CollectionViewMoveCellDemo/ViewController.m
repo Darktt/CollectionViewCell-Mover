@@ -44,7 +44,7 @@
     [array release];
     
     DTCollectionViewCellMover *cellMover = [DTCollectionViewCellMover cellMoverWithDelegate:self];
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(20.0f, 0.0f, 100.0f, 0.0f);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
     
     [self.collectionView setCellMover:cellMover];
     [self.collectionView setContentInset:contentInsets];
