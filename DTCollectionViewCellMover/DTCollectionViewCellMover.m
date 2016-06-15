@@ -7,25 +7,6 @@
 
 #import "DTCollectionViewCellMover.h"
 
-#pragma mark - UIPanGestureRecognizer
-
-@import UIKit.UIGestureRecognizerSubclass;
-
-@interface UIPanGestureRecognizer (Private)
-
-- (void)cancel;
-
-@end
-
-@implementation UIPanGestureRecognizer (Private)
-
-- (void)cancel
-{
-    [self setState:UIGestureRecognizerStateCancelled];
-}
-
-@end
-
 #pragma mark - UICollectionViewCell
 
 @interface UICollectionViewCell (Private)

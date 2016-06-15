@@ -31,7 +31,6 @@
 		526F38641CF2D28600E5D57D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		526F38671CF2D28600E5D57D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		526F38691CF2D28600E5D57D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		526F386F1CF2D31800E5D57D /* DTCollectionViewMoveCellHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCollectionViewMoveCellHandler.h; sourceTree = "<group>"; };
 		526F38721CF2D33F00E5D57D /* DTCollectionViewCellMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTCollectionViewCellMover.h; sourceTree = "<group>"; };
 		526F38731CF2D33F00E5D57D /* DTCollectionViewCellMover.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTCollectionViewCellMover.m; sourceTree = "<group>"; };
 		526F38761CF2D66A00E5D57D /* UICollectionView+CellMover.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+CellMover.h"; sourceTree = "<group>"; };
@@ -81,7 +80,6 @@
 				526F38791CF2E0A100E5D57D /* DTCollectionViewCell.h */,
 				526F387A1CF2E0A100E5D57D /* DTCollectionViewCell.m */,
 				526F38751CF2D63700E5D57D /* DTCollectionViewCellMover */,
-				526F386F1CF2D31800E5D57D /* DTCollectionViewMoveCellHandler.h */,
 				526F38611CF2D28600E5D57D /* Main.storyboard */,
 				526F38641CF2D28600E5D57D /* Assets.xcassets */,
 				526F38661CF2D28600E5D57D /* LaunchScreen.storyboard */,
