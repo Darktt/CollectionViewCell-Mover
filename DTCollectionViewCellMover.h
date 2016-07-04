@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface DTCollectionViewCellMover : NSObject
 
 /**
- *    The scale for cell when dragging. Default is 1.5.
+ *    The scale the cell when dragging. Default is 1.5.
  */
 @property (assign) CGFloat cellScale;
 
