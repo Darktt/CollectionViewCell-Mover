@@ -1,4 +1,4 @@
-# CollectionViewCell-Mover-Demo
+# CollectionViewCell Mover
 UICollectionView move cell module.
 
 ---
