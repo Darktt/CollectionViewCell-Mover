@@ -53,7 +53,7 @@
 {
     DTCollectionViewCellMover *cellMover = [[DTCollectionViewCellMover alloc] initWithDelegate:delegate];
     
-    return cellMover;
+    return [cellMover autorelease];
 }
 
 - (instancetype)initWithDelegate:(id<DTCollectionViewCellMoverDelegate>)delegate
